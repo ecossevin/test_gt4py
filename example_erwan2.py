@@ -4,7 +4,9 @@ import numpy as np
 from ifs_physics_common.framework.config import GT4PyConfig
 from ifs_physics_common.framework.stencil import stencil_collection, compile_stencil
 
-backend = "gt:cpu_ifirst"
+#backend = "gt:cpu_ifirst"
+backend = "cuda"
+#backend = "gt:gpu"
 #backend = "numpy"
 #backend = "dace:gpu"
 
@@ -19,8 +21,8 @@ def example_1(
     with computation(PARALLEL), interval(...):
         foo[0,  0,  0] = inn[1, 0, 0] - inn[0,  0,  0]
 
-    with computation(PARALLEL), interval(...):
-        bar[0,  0,  0] = foo[1, 0, 0] - foo[0,  0,  0]
+#    with computation(PARALLEL), interval(...):
+#        bar[0,  0,  0] = foo[1, 0, 0] - foo[0,  0,  0]
    
 ##@gtscript.stencil(backend=backend, rebuild=True)
 #@stencil_collection("example2")

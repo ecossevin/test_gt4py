@@ -1,0 +1,11 @@
+
+               computation    bindings    CLI-enabled
+-------------  -------------  ----------  -------------
+dace:cpu       c++            python      Yes
+dace:gpu       cuda           python      Yes
+cuda           cuda           python      Yes
+gt:cpu_ifirst  c++            python      Yes
+gt:cpu_kfirst  c++            python      Yes
+gt:gpu         cuda           python      Yes
+numpy          python         python      Yes
+
